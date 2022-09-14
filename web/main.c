@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "shopify.h"
+#include <shopify.h>
 
 static enum MHD_Result handle_request(void *cls, struct MHD_Connection *conn,
 		const char *url, const char *method, const char *version,

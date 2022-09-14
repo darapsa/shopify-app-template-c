@@ -1,0 +1,14 @@
+*~
+*.swp
+Makefile.in
+aclocal.m4
+autom4te.cache
+autoscan*.log
+build
+compile
+config.*
+configure
+configure.scan
+depcomp
+install-sh
+missing

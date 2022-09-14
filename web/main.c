@@ -21,9 +21,17 @@ static enum MHD_Result handle_request(void *cls, struct MHD_Connection *conn,
 		free(params);
 		return MHD_NO;
 	}
+	const size_t dir_len = strlen(APP_DIR);
+	static const char *toml_rel_path = "/shopify.app.toml";
+	char toml_abs_path[dir_len + strlen(toml_rel_path) + 1];
+	sprintf(toml_abs_path, "%s%s", APP_DIR, toml_rel_path);
+	static const char *html_rel_path = "/web/frontend/index.html";
+	char html_abs_path[dir_len + strlen(html_rel_path) + 1];
+	sprintf(html_abs_path, "%s%s", APP_DIR, html_rel_path);
 	struct MHD_Response *resp;
 	enum MHD_Result ret = shopify_respond(params, url, redir_url, APP_URL,
-			APP_ID, API_KEY, API_SECRET_KEY, APP_DIR, conn, &resp);
+			APP_ID, API_KEY, API_SECRET_KEY, toml_abs_path,
+			html_abs_path, conn, &resp);
 	MHD_destroy_response(resp);
 	free(params);
 	return ret;

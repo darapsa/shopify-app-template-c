@@ -1,0 +1,3 @@
+[submodule "web/frontend"]
+	path = web/frontend
+	url = git://darapsa.org/shopify-frontend-template-html

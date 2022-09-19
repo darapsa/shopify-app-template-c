@@ -35,7 +35,6 @@ You need to build the backend.
 
 ```shell
 export CPPFLAGS="$CPPFLAGS -DAPP_URL=\\\"https://your.public/host\\\" -DAPP_ID=\\\"yourapp\\\" -DAPI_KEY=\\\"0123456789abcedf\\\" -API_SECRET_KEY=\\\"vwxyz_0123456789abcdef\\\" -DAPP_DIR=\\\"/path/to/your/app/dir\\\""
-cd web
 autoreconf -is
 mkdir -p build
 cd build

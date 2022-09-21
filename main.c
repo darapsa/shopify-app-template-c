@@ -15,8 +15,9 @@ static char *html(const char *host)
 	struct stat sb;
 	fstat(fd, &sb);
 	char template[sb.st_size + 1];
-	read(fd, path, sb.st_size);
+	read(fd, template, sb.st_size);
 	close(fd);
+	template[sb.st_size] = '\0';
 	const size_t html_len = sb.st_size - strlen("%s") * 4 + strlen(API_KEY)
 		+ strlen(host) + strlen(APP_URL) * 2;
 	char *html = malloc(html_len + 1);

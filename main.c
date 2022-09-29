@@ -35,7 +35,7 @@ int main(int argc, char *argv[])
 	char js_dir[app_dir_len + strlen(js_dir_rel) + 1];
 	sprintf(js_dir, "%s%s", APP_DIR, js_dir_rel);
 	shopify_app(API_KEY, API_SECRET_KEY, APP_URL, "/auth", APP_ID, scopes,
-			html, js_dir, (struct shopify_api[]){
+		html, js_dir, (struct shopify_api[]){
 			{
 				"/products",
 				"GET",
@@ -48,6 +48,8 @@ int main(int argc, char *argv[])
 				"  }"\
 				"}"
 			},
+			{}
+		}, (struct shopify_carrierservice[]){
 			{}
 		}
 	);
